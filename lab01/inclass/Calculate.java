@@ -7,10 +7,12 @@ public class Calculate {
         strNum1 = JOptionPane.showInputDialog(null,
         		"Please input the first number: ");
         double num1 = Double.parseDouble(strNum1);
+        System.out.println("First number: " + num1);
         
         strNum2 = JOptionPane.showInputDialog(null,
         		"Please input the second number: ");
         double num2 = Double.parseDouble(strNum2);
+        System.out.println("Second number: " + num2);
 
         double sum = num1 + num2;
         double difference = num1 - num2;

@@ -1,65 +1,56 @@
 // 250225 - Lab 01
 // Assignemnt 2.2.6
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 import java.lang.Math; 
 
 public class SolveEquation {
+	public static Scanner keyboard = new Scanner(System.in);
     // first degree equation
     public static void FirstDegreeEquation(){
-        String str1, str2;
-        double a, b, res;
-
+    	double a, b;
         while(true){
-            str1 = JOptionPane.showInputDialog(null,
-                    "Input a: ");
-            a = Double.parseDouble(str1);
+            System.out.println("Input a: ");
+            a = keyboard.nextDouble();
         if(a == 0){
-            JOptionPane.showMessageDialog(null, "Invalid! Please try again.");
+            System.out.println("Invalid! Please try again.");
         } else break;
         }
 
-        str2 = JOptionPane.showInputDialog(null,
-        		"Input b: ");
-        b = Double.parseDouble(str2);
+        System.out.println("Input b: ");
+        b = keyboard.nextDouble();
 
         // solve
-        res = -b/a;
-        JOptionPane.showMessageDialog(null, "Solution: " + res);
+        double res = -b/a;
+        System.out.println("Solution: " + res);
     }
 
     // system of first degree equation (linear system)
     public static void SystemFirstDegreeEquation(){
-        String str1, str2, str3;
         double a1, b1, c1;
         double a2, b2, c2;
         double D, Dx, Dy;
         double x, y;
 
         // first equation
-        str1 = JOptionPane.showInputDialog(null,
-        "Input a1: ");
-        a1 = Double.parseDouble(str1);
+        System.out.println("Input a1: ");
+        a1 = keyboard.nextDouble();
 
-        str2 = JOptionPane.showInputDialog(null,
-        "Input b1: ");
-        b1 = Double.parseDouble(str2);
+        System.out.println("Input b1: ");
+        b1 = keyboard.nextDouble();
 
-        str3 = JOptionPane.showInputDialog(null,
-        "Input c1: ");
-        c1 = Double.parseDouble(str3);
+        System.out.println("Input c1: ");
+        c1 = keyboard.nextDouble();
 
         // second equation
-        str1 = JOptionPane.showInputDialog(null,
-        "Input a2: ");
-        a2 = Double.parseDouble(str1);
+        System.out.println("Input a2: ");
+        a2 = keyboard.nextDouble();
 
-        str2 = JOptionPane.showInputDialog(null,
-        "Input b2: ");
-        b2 = Double.parseDouble(str2);
+        System.out.println("Input b2: ");
+        b2 = keyboard.nextDouble();
 
-        str3 = JOptionPane.showInputDialog(null,
-        "Input c2: ");
-        c2 = Double.parseDouble(str3);
+        System.out.println("Input c2: ");
+        c2 = keyboard.nextDouble();
 
         // calculate determinants
         D = a1*b2 - a2*b1;
@@ -69,52 +60,48 @@ public class SolveEquation {
         if( D !=0 ) {
             x = Dx / D;
             y = Dy / D;
-            JOptionPane.showMessageDialog(null, "Solution: (" + x + "," + y + ").");
+            System.out.println("Solution: " + x + " and " + y + "");
         } else if ( D == Dx && Dx == Dy && Dy == 0) {
-            JOptionPane.showMessageDialog(null,
+        	System.out.println(
             "The system of equation has infinitely solutions");
         } else {
-            JOptionPane.showMessageDialog(null,
+        	System.out.println(
             "The system of euqation has no solution");
         }
     }
 
     // second-degree equation
     public static void SecondDegreeEquation() {
-        String str1, str2, str3;
         double a, b, c;
         double x1, x2;
 
         // check a and input 
         while(true){
-            str1 = JOptionPane.showInputDialog(null,
-                    "Input a: ");
-            a = Double.parseDouble(str1);
+            System.out.println("Input a: ");
+            a = keyboard.nextDouble();
         if(a == 0){
-            JOptionPane.showMessageDialog(null, "Invalid! Please try again.");
+            System.out.println("Invalid! Please try again.");
         } else break;
         }
 
-        str2 = JOptionPane.showInputDialog(null,
-        "Input b: ");
-        b = Double.parseDouble(str2);
+        System.out.println("Input b: ");
+        b = keyboard.nextDouble();
 
-        str3 = JOptionPane.showInputDialog(null,
-        "Input c: ");
-        c = Double.parseDouble(str3);
+        System.out.println("Input c: ");
+        c = keyboard.nextDouble();
 
         // solve
         double delta = b*b - 4*a*c;
         if(delta > 0) {
             x1 = (-b + Math.sqrt(delta))/2*a;
             x2 = (-b - Math.sqrt(delta))/2*a;
-            JOptionPane.showMessageDialog(null, "Solution: x1 = " + x1 + " and x2 = " + x2);
+            System.out.println("Solution: x1 = " + x1 + " and x2 = " + x2);
         } else if(delta == 0) {
             x1 = -b / 2*a;
             x2 = x1;
-            JOptionPane.showMessageDialog(null, "Solution: x1 = x2 = " + x1);
+            System.out.println("Solution: x1 = x2 = " + x1);
         } else {
-            JOptionPane.showMessageDialog(null, "This system of euqation has no solution");
+        	System.out.println("This system of euqation has no solution");
         }
         
     }
@@ -123,7 +110,7 @@ public class SolveEquation {
     public static void main(String[] args) {
         String option;
 
-        option = JOptionPane.showInputDialog(null, 
+        option = JOptionPane.showInputDialog(null,
             "1 = First-degree equation (linear equation)\n"
             + "2 = System of first-degree equations (linear system)\n"
             + "3 = Second-degree equation]\n"
@@ -140,10 +127,10 @@ public class SolveEquation {
                 SecondDegreeEquation();
                 break;
             case "4":
-                JOptionPane.showMessageDialog(null, "Exit program");
+                System.out.println("Exit program");
                 System.exit(0);
             default:
-                JOptionPane.showMessageDialog(null, "Invalid! Please try again");
+            	System.out.println("Invalid! Please try again");
                 main(null);
         }
     }
