@@ -46,5 +46,6 @@ public class MatrixAdd {
 			}
 			System.out.println();
 		}
+		keyboard.close();
 	}
 }
