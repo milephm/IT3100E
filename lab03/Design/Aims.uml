@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>hust.soict.ict.aims.Aims</OriginalElement>
+  <nodes>
+    <node x="579.321170680062" y="377.63808459824656">hust.soict.ict.aims.media.Book</node>
+    <node x="271.5386086623655" y="822.1418767984675">hust.soict.ict.aims.media.Track</node>
+    <node x="877.2906365757078" y="386.01418576735506">hust.soict.ict.aims.media.MediaComparatorByTitleCost</node>
+    <node x="327.40758844253105" y="639.6534213829668">hust.soict.ict.aims.media.Playable</node>
+    <node x="1023.6592363317225" y="674.8081341422826">hust.soict.ict.aims.Aims</node>
+    <node x="-139.20212653604383" y="564.448219071603">hust.soict.ict.aims.media.Media</node>
+    <node x="792.139668021701" y="690.0959253555274">hust.soict.ict.aims.media.Disc</node>
+    <node x="869.8168880775578" y="534.2202120094474">hust.soict.ict.aims.media.MediaComparatorByTypeTitle</node>
+    <node x="571.3032164669553" y="-13.308532415036552">hust.soict.ict.aims.cart.Cart</node>
+    <node x="526.576447874797" y="622.7286901637326">hust.soict.ict.aims.media.CompactDisc</node>
+    <node x="658.3474435081175" y="930.2935792100324">hust.soict.ict.aims.media.DigitalVideoDisc</node>
+    <node x="-63.845940662599816" y="319.6565167998299">hust.soict.ict.aims.store.Store</node>
+    <node x="238.53803954494265" y="379.10032592239463">hust.soict.ict.aims.media.MediaComparatorByCostTitle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="hust.soict.ict.aims.media.DigitalVideoDisc" target="hust.soict.ict.aims.media.Playable" relationship="REALIZATION">
+      <point x="-89.50044350811754" y="4.207899676202942E-4" />
+      <point x="497.0" y="961.794" />
+      <point x="497.0" y="671.153" />
+      <point x="60.500411557468965" y="-4.213829667492064E-4" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.Book" target="hust.soict.ict.aims.media.Media" relationship="GENERALIZATION">
+      <point x="-115.00017068006196" y="-8.459824658757498E-5" />
+      <point x="195.654" y="469.63800000000003" />
+      <point x="195.654" y="535.0" />
+      <point x="35.798" y="535.0" />
+      <point x="1.265360438349461E-4" y="-248.00021907160306" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.Disc" target="hust.soict.ict.aims.media.Media" relationship="GENERALIZATION">
+      <point x="3.319782989592568E-4" y="80.00007464447265" />
+      <point x="877.14" y="1077.9479999999999" />
+      <point x="228.298" y="1077.9479999999999" />
+      <point x="228.298" y="535.0" />
+      <point x="35.798" y="535.0" />
+      <point x="1.265360438349461E-4" y="-248.00021907160306" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.DigitalVideoDisc" target="hust.soict.ict.aims.media.Disc" relationship="GENERALIZATION">
+      <point x="-23.7714435081175" y="-31.49957921003238" />
+      <point x="724.076" y="872.229" />
+      <point x="762.0" y="872.229" />
+      <point x="762.0" y="770.096" />
+      <point x="-84.99966802170104" y="7.464447264737828E-5" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.CompactDisc" target="hust.soict.ict.aims.media.Disc" relationship="GENERALIZATION">
+      <point x="102.49955212520297" y="3.0983626737679515E-4" />
+      <point x="762.0" y="738.729" />
+      <point x="762.0" y="770.096" />
+      <point x="-84.99966802170104" y="7.464447264737828E-5" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.CompactDisc" target="hust.soict.ict.aims.media.Playable" relationship="REALIZATION">
+      <point x="-102.50044787479703" y="3.0983626737679515E-4" />
+      <point x="497.0" y="738.729" />
+      <point x="497.0" y="671.153" />
+      <point x="60.500411557468965" y="-4.213829667492064E-4" />
+    </edge>
+    <edge source="hust.soict.ict.aims.media.Track" target="hust.soict.ict.aims.media.Playable" relationship="REALIZATION">
+      <point x="97.00039133763448" y="1.2320153257405764E-4" />
+      <point x="497.0" y="926.142" />
+      <point x="497.0" y="671.153" />
+      <point x="60.500411557468965" y="-4.213829667492064E-4" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6070143884892086" showDependencies="false" x="689.9962962962966" y="531.2918518518517" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

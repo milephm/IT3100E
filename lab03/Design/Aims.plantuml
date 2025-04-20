@@ -1,0 +1,119 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Aims {
+  + store: Store
+  + scanner: Scanner
+  + cart: Cart
+  + cartMenu(): void
+  + main(String[]): void
+  + storeMenu(): void
+  + showMenu(): void
+  + updateStoreMenu(): void
+  + createNewMedia(): Media
+  + mediaDetailMenu(Media): void
+}
+class Book {
+  - author: List<String>
+  + getAuthor(): List<String>
+  + setAuthor(List<String>): void
+  + toString(): String
+  + addAuthor(String): void
+  + removeAuthor(String): void
+}
+class Cart {
+  + MAX_NUMBERS_ORDERED: int
+  - itemsOrdered: ArrayList<Media>
+  + totalCost(): float
+  + addMedia(Media): void
+  + sortByCost(): void
+  + searchID(int): Media
+  + searchTitle(String): Media
+  + removeMedia(Media): void
+  + print(): void
+  + sortByType(): void
+  + sortByTitle(): void
+  + clear(): void
+}
+class CompactDisc {
+  - artist: String
+  - tracks: ArrayList<Track>
+  + toString(): String
+  + getArtist(): String
+  + getLength(): int
+  + removeTrack(Track): void
+  + addTrack(Track): void
+  + play(): void
+}
+class DigitalVideoDisc {
+  + play(): void
+}
+class Disc {
+  - length: int
+  - director: String
+  + toString(): String
+  + getLength(): int
+  + getDirector(): String
+}
+class Media {
+  - cost: float
+  + COMPARE_BY_COST_TITLE: Comparator<Media>
+  - category: String
+  - id: int
+  - title: String
+  + COMPARE_BY_TYPE_TITLE: Comparator<Media>
+  + COMPARE_BY_TITLE_COST: Comparator<Media>
+  + setCategory(String): void
+  + getCategory(): String
+  + equals(Object): boolean
+  + getId(): int
+  + setId(int): void
+  + isMatch(String): boolean
+  + getTitle(): String
+  + toString(): String
+  + isMatch(int): boolean
+  + setTitle(String): void
+  + setCost(float): void
+  + getCost(): float
+}
+class MediaComparatorByCostTitle {
+  + compare(Media, Media): int
+}
+class MediaComparatorByTitleCost {
+  + compare(Media, Media): int
+}
+class MediaComparatorByTypeTitle {
+  + compare(Media, Media): int
+}
+interface Playable << interface >> {
+  + play(): void
+}
+class Store {
+  - itemsInStore: ArrayList<Media>
+  + addMedia(Media): void
+  + searchByID(int): Media
+  + print(): void
+  + searchByTitle(String): Media
+  + removeMedia(Media): void
+}
+class Track {
+  - title: String
+  - length: int
+  + getTitle(): String
+  + getLength(): int
+  + toString(): String
+  + equals(Object): boolean
+  + play(): void
+}
+
+Book                        -[#000082,plain]-^  Media                      
+CompactDisc                 -[#000082,plain]-^  Disc                       
+CompactDisc                 -[#008200,dashed]-^  Playable                   
+DigitalVideoDisc            -[#000082,plain]-^  Disc                       
+DigitalVideoDisc            -[#008200,dashed]-^  Playable                   
+Disc                        -[#000082,plain]-^  Media                      
+Track                       -[#008200,dashed]-^  Playable                   
+@enduml
